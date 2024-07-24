@@ -12,12 +12,11 @@ public class MoveChassis extends CommandBase {
     private final Chassis chassis;
     private final Gamepad driverGamepad;
 
-    private final FRCTrapezoidProfile leftProfile = new FRCTrapezoidProfile(new FRCTrapezoidProfile.Constraints(0.7, 999));
-    private final FRCTrapezoidProfile rightProfile = new FRCTrapezoidProfile(new FRCTrapezoidProfile.Constraints(1.5,999));
+    private final FRCTrapezoidProfile leftProfile = new FRCTrapezoidProfile(new FRCTrapezoidProfile.Constraints(0.6, 999));
+    private final FRCTrapezoidProfile rightProfile = new FRCTrapezoidProfile(new FRCTrapezoidProfile.Constraints(0.6,999));
 
-    private FRCTrapezoidProfile.State rightGoal = new FRCTrapezoidProfile.State();
     private FRCTrapezoidProfile.State leftGoal = new FRCTrapezoidProfile.State();
-
+    private FRCTrapezoidProfile.State rightGoal = new FRCTrapezoidProfile.State();
 
     public MoveChassis(Chassis subsystem, Gamepad driverGamepad) {
         this.driverGamepad = driverGamepad;
@@ -33,10 +32,9 @@ public class MoveChassis extends CommandBase {
         right = JoystickHandler.handleJoystickInput(right);
         left = JoystickHandler.handleJoystickInput(left);
 
-        rightGoal = rightProfile.calculate(0.05, rightGoal, new FRCTrapezoidProfile.State(right, 0.0));
-        leftGoal = leftProfile.calculate(0.05, leftGoal, new FRCTrapezoidProfile.State(left, 0.0));
+        rightGoal = rightProfile.calculate(0.5, rightGoal, new FRCTrapezoidProfile.State(right, 0.0));
+        leftGoal = leftProfile.calculate(0.5, leftGoal, new FRCTrapezoidProfile.State(left, 0.0));
 
-        chassis.setSpeed(leftGoal.position, rightGoal.position * 0.5
-        );
+        chassis.setSpeed(leftGoal.position, rightGoal.position);
     }
 }
