@@ -55,6 +55,9 @@ public class MainSystem extends LinearOpMode {
         Button driverDpadUP= driverOp.getGamepadButton(GamepadKeys.Button.DPAD_UP);
         driverDpadUP.whenPressed(new MoveSingleArm(singleArm, -10));
 
+        Button driverDpadLEFT = driverOp.getGamepadButton(GamepadKeys.Button.DPAD_LEFT);
+        driverDpadLEFT.whenPressed(new MoveSingleArm(singleArm, -90));
+
         // -- CLAW MOVEMENT -- //
         Button driverButtonX= driverOp.getGamepadButton(GamepadKeys.Button.X);
         driverButtonX.whenPressed(new MoveClaw(claw, 0.7));
