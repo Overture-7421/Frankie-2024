@@ -32,12 +32,20 @@ import org.firstinspires.ftc.teamcode.Subsystems.Chassis;
 import org.firstinspires.ftc.teamcode.Subsystems.SingleArm;
 
 
+
+import edu.wpi.first.math.controller.RamseteController;
+import edu.wpi.first.wpilibj2.command.Subsystem;
+
+
 @TeleOp
 public class MainSystem extends LinearOpMode {
-
     @Override
     public void runOpMode() {
-        CommandScheduler.getInstance().cancelAll();
+
+        //MyText hai = new MyText();
+        //hai.printMessage();
+
+        /*CommandScheduler.getInstance().cancelAll();
         CommandScheduler.getInstance().reset();
 
         Chassis chassis         = new Chassis(hardwareMap);     // Create an instance of Chassis
@@ -82,6 +90,6 @@ public class MainSystem extends LinearOpMode {
 
             // -- UPDATE TELEMETRY -- //
             telemetry.update();
-        }
+        }*/
     }
 }

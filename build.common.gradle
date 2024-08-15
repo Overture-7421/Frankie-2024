@@ -90,16 +90,16 @@ android {
         release {
             signingConfig signingConfigs.release
 
-            ndk {
+            /*ndk {
                 abiFilters "armeabi-v7a"
-            }
+            }*/
         }
         debug {
             debuggable true
             jniDebuggable true
-            ndk {
+            /*ndk {
                 abiFilters "armeabi-v7a"
-            }
+            }*/
         }
     }
 
@@ -117,5 +117,6 @@ android {
 
 repositories {
     mavenCentral()
+    mavenLocal()
 }
 

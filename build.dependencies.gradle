@@ -1,6 +1,16 @@
 repositories {
     mavenCentral()
+    mavenLocal()
     google() // Needed for androidx
+    maven {
+        url "https://overture-7421.github.io/overFTCtest/repos/"
+    }
+
+    /*maven {
+        url "https://frcmaven.wpi.edu/artifactory/release/"
+    }*/
+
+
 }
 
 dependencies {

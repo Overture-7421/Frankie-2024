@@ -7,7 +7,16 @@
 buildscript {
     repositories {
         mavenCentral()
+        mavenLocal()
         google()
+        maven {
+            url "https://overture-7421.github.io/overFTCtest/repos/"
+        }
+
+        maven {
+            url "https://frcmaven.wpi.edu/artifactory/release/"
+        }
+
     }
     dependencies {
         // Note for FTC Teams: Do not modify this yourself.
@@ -20,10 +29,27 @@ buildscript {
 allprojects {
     repositories {
         mavenCentral()
+        mavenLocal()
         google()
+        maven {
+            url "https://overture-7421.github.io/overFTCtest/repos/"
+        }
+
+        maven {
+            url "https://frcmaven.wpi.edu/artifactory/release/"
+        }
+
     }
 }
 
 repositories {
     mavenCentral()
+    mavenLocal()
+    maven {
+        url "https://overture-7421.github.io/overFTCtest/repos/"
+    }
+
+    maven {
+        url "https://frcmaven.wpi.edu/artifactory/release/"
+    }
 }
